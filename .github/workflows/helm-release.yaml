@@ -32,5 +32,5 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: Push Helm Chart
       run: |
-        helm push .helm-charts/go-deploy-example-${{ steps.get_version.outputs.VERSION }}.tgz oci://ghcr.io/sunu/go-deploy-example
+        helm push .helm-charts/go-deploy-example-helm-chart-${{ steps.get_version.outputs.VERSION }}.tgz oci://ghcr.io/sunu/go-deploy-example
       
