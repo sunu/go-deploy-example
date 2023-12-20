@@ -6,5 +6,5 @@ api:
   replicaCount: 1
   image:
     repository: ghcr.io/sunu/go-deploy-example
-    tag: latest
+    tag: 662ed71bf10160525e50790c52e1199fbe84c1d4
   host: go-deploy-example.ds.io
