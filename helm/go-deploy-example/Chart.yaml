@@ -1,0 +1,6 @@
+apiVersion: v2
+name: go-deploy-example
+description: Example Helm chart to deploy on IFRC GO k8s cluster
+type: application
+version: 0.0.1
+appVersion: 0.0.1

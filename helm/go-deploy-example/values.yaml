@@ -1,0 +1,10 @@
+config:
+  environment: playground
+  enable_tls: false
+
+api:
+  replicaCount: 1
+  image:
+    repository: ghcr.io/sunu/go-deploy-example
+    tag: latest
+  host: go-deploy-example.ds.io

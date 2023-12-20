@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: go-example-ingress
+  annotations:
+    cert-manager.io/issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  {{- if .Values.config.enable_tls }}
+  tls:
+  - hosts:
+    - "{{ .Values.app.host }}"
+    secretName: go-example-tls
+  {{- end }}
+  rules:
+  - host: "{{ .Values.app.host }}"
+    http:
+      paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service: 
+                name: go-example-app
+                port: 
+                  number: 8000
