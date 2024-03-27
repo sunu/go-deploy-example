@@ -1,0 +1,10 @@
+charts:
+  - name: go-deploy-example
+    imagePrefix: ghcr.io/sunu/go-deploy-example-
+    resetTag: latest
+    baseVersion: 0.0.3
+    images:
+      api:
+        valuesPath: api.image
+        contextPath: ../
+        dockerfilePath: ../Dockerfile
