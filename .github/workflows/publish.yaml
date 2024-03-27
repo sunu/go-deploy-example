@@ -32,7 +32,7 @@ jobs:
 
     - name: Build and push Docker image. Update the image tag, chart version etc as needed
       run: |
-        chartpress --push
+        cd helm && chartpress --push
 
     - name: Get the version
       id: get_version
