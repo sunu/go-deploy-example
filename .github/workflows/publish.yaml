@@ -30,6 +30,18 @@ jobs:
 
         helm version
 
-    - name: Build and push Docker image
+    - name: Build and push Docker image. Update the image tag, chart version etc as needed
       run: |
         chartpress --push
+
+    - name: Get the version
+      id: get_version
+      run: echo ::set-output name=VERSION::$(cat helm/go-deploy-example/Chart.yaml | grep version | awk '{print $2}')
+
+    - name: Package Helm Chart
+      run: |
+        helm package helm/go-deploy-example -d .helm-charts
+
+    - name: Push Helm Chart
+      run: |
+        helm push .helm-charts/go-deploy-example-helm-chart-${{ steps.get_version.outputs.VERSION }}.tgz oci://ghcr.io/sunu/go-deploy-example
