@@ -1,5 +1,5 @@
 [tool.bumpversion]
-current_version = "0.0.4"
+current_version = "0.0.5"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"
@@ -12,6 +12,15 @@ sign_tags = true
 tag_name = "v{new_version}"
 tag_message = "Bump version: {current_version} → {new_version}"
 allow_dirty = false
-commit = false
+commit = true
 message = "Bump version: {current_version} → {new_version}"
 commit_args = ""
+
+[[tool.bumpversion.files]]
+filename = "app.py"
+
+[[tool.bumpversion.files]]
+filename = "helm/go-deploy-example/Chart.yaml"
+
+[[tool.bumpversion.files]]
+filename = "helm/chartpress.yaml"
