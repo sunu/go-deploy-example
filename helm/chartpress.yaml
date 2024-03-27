@@ -2,7 +2,7 @@ charts:
   - name: go-deploy-example
     imagePrefix: ghcr.io/sunu/go-deploy-example-
     resetTag: latest
-    baseVersion: 0.0.3
+    baseVersion: "0.0.4"
     images:
       api:
         valuesPath: api.image
