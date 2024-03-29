@@ -5,7 +5,7 @@ name: release-tag
 on:
   push:
     tags:
-      - "v*"
+      - "**"
 
 jobs:
   create-release:
