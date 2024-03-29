@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-VERSION = "0.0.6"
+VERSION = "0.0.7"
 
 app = FastAPI()
 
